@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
+using UnityEditor.Build.Content;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -12,13 +13,15 @@ public enum AIState
     Attacking,
     Fleeing,
     run
-        
 }
+
 
 
 public class SnowMonster : MonoBehaviour ,IDamagable
 {
     [Header("Stats")]
+    public bool IsRange;
+    public GameObject Bullet;
     public int health;
     public float walkSpeed;
     public float runSpeed;
@@ -44,7 +47,7 @@ public class SnowMonster : MonoBehaviour ,IDamagable
     private float playerDistance;
 
     public GameObject player;
-    public float fieldOfView = 120f;
+    public float fieldOfView = 60f;
     private float time;
     private bool _AttackTimeCheck = false;
     public  float _AttackTime = 10;
@@ -140,6 +143,12 @@ public class SnowMonster : MonoBehaviour ,IDamagable
                 //player.GetComponent<IDamagable>().TakePhysicalDamage(damage);
                 animator.speed = 1;
                 animator.SetTrigger("Attack");
+                if (IsRange)
+                {
+                    transform.LookAt(player.transform);
+                    GameObject bullet = Instantiate(Bullet,transform.position,transform.rotation);
+                    Destroy(bullet, 2f);
+                }
             }
         }
     }
@@ -156,7 +165,7 @@ public class SnowMonster : MonoBehaviour ,IDamagable
         {
             SetState(AIState.run);
         }
-        else if (playerDistance < detectDistance)
+        else if (playerDistance < attackDistance)
         {
             SetState(AIState.Attacking);
         }
@@ -279,7 +288,7 @@ public class SnowMonster : MonoBehaviour ,IDamagable
         {
             Instantiate(dropOnDeath[x].dropPrefab, transform.position + Vector3.up * 2, Quaternion.identity);
         }
-
+        MonsterManager.instance.count--;
         Destroy(gameObject);
     }
 

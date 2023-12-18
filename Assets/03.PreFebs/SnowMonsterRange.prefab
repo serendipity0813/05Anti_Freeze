@@ -604,19 +604,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb6f0901546d30b46982b868e827f3d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  IsRange: 1
+  Bullet: {fileID: 4786867317314586768, guid: 5c5b7b8d5c7b81045a37ed6acbd29a64, type: 3}
   health: 4
   walkSpeed: 1
   runSpeed: 2
   dropOnDeath: []
-  detectDistance: 10
-  safeDistance: 15
+  detectDistance: 8
+  safeDistance: 12
   minWanderDistance: 2
   maxWanderDistance: 5
   minWanderWaitTime: 5
   maxWanderWaitTime: 7
-  damage: 4
+  damage: 0
   attackRate: 1
-  attackDistance: 10
+  attackDistance: 15
   player: {fileID: 0}
   fieldOfView: 120
   _AttackTime: 30
