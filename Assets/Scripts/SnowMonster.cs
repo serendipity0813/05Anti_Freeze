@@ -96,7 +96,7 @@ public class SnowMonster : MonoBehaviour ,IDamagable
 
     private void runUpdate()
     {
-        if (playerDistance < detectDistance)
+        if (playerDistance < attackDistance+2)
         {
             agent.isStopped = false;
             agent.SetDestination(transform.position - player.transform.position * 1);
@@ -121,7 +121,7 @@ public class SnowMonster : MonoBehaviour ,IDamagable
 
     private void AttackingUpdate()
     {
-        if (playerDistance > attackDistance || !IsPlaterInFireldOfView())
+        if ((playerDistance>attackDistance &&playerDistance < detectDistance) || !IsPlaterInFireldOfView())
         {
             agent.isStopped = false;
             NavMeshPath path = new NavMeshPath();
@@ -134,7 +134,7 @@ public class SnowMonster : MonoBehaviour ,IDamagable
                 SetState(AIState.Fleeing);
             }
         }
-        else
+        else if(playerDistance < attackDistance)
         {
             agent.isStopped = true;
             if (Time.time - lastAttackTime > attackRate)

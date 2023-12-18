@@ -590,7 +590,7 @@ Transform:
   m_Children:
   - {fileID: 1207759910811048720}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7069769646521892239
 MonoBehaviour:
@@ -607,10 +607,10 @@ MonoBehaviour:
   IsRange: 1
   Bullet: {fileID: 4786867317314586768, guid: 5c5b7b8d5c7b81045a37ed6acbd29a64, type: 3}
   health: 4
-  walkSpeed: 0.5
+  walkSpeed: 1
   runSpeed: 1
   dropOnDeath: []
-  detectDistance: 3
+  detectDistance: 5
   safeDistance: 10
   minWanderDistance: 2
   maxWanderDistance: 5
@@ -618,7 +618,7 @@ MonoBehaviour:
   maxWanderWaitTime: 7
   damage: 0
   attackRate: 1
-  attackDistance: 12
+  attackDistance: 6
   player: {fileID: 0}
   fieldOfView: 120
   _AttackTime: 30

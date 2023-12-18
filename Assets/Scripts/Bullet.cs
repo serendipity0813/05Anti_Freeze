@@ -6,6 +6,6 @@ public class Bullet : MonoBehaviour
 {
     private void Update()
     {
-        transform.Translate(Vector3.forward *0.05f);
+        transform.Translate(Vector3.forward *0.01f);
     }
 }
