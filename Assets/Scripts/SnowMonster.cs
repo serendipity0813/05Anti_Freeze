@@ -10,7 +10,9 @@ public enum AIState
     Idle,
     Wandering,
     Attacking,
-    Fleeing
+    Fleeing,
+    run
+        
 }
 
 
@@ -43,6 +45,9 @@ public class SnowMonster : MonoBehaviour ,IDamagable
 
     public GameObject player;
     public float fieldOfView = 120f;
+    private float time;
+    private bool _AttackTimeCheck = false;
+    public  float _AttackTime = 10;
 
     private NavMeshAgent agent;
     private Animator animator;
@@ -63,6 +68,15 @@ public class SnowMonster : MonoBehaviour ,IDamagable
     private void Update()
     {
         playerDistance = Vector3.Distance(transform.position, player.transform.position);
+        time = time + Time.deltaTime;
+        if (time > _AttackTime && !_AttackTimeCheck)
+        {
+            detectDistance = 50;
+            _AttackTimeCheck = true;
+        }
+        playerDistance = Vector3.Distance(transform.position, player.transform.position);
+        if (playerDistance < detectDistance && health <= 5)
+            SetState(AIState.run);
 
         animator.SetBool("Moving", aiState != AIState.Idle);
 
@@ -72,8 +86,22 @@ public class SnowMonster : MonoBehaviour ,IDamagable
             case AIState.Wandering: PassiveUpdate(); break;
             case AIState.Attacking: AttackingUpdate(); break;
             case AIState.Fleeing: FleeingUpdate(); break;
+            case AIState.run: runUpdate(); break;
         }
 
+    }
+
+    private void runUpdate()
+    {
+        if (playerDistance < detectDistance)
+        {
+            agent.isStopped = false;
+            agent.SetDestination(transform.position - player.transform.position * 2);
+        }
+        else
+        {
+            SetState(AIState.Fleeing);
+        }
     }
 
     private void FleeingUpdate()
@@ -124,7 +152,11 @@ public class SnowMonster : MonoBehaviour ,IDamagable
             Invoke("WanderToNewLocation", Random.Range(minWanderWaitTime, maxWanderWaitTime));
         }
 
-        if (playerDistance < detectDistance)
+        if (playerDistance < detectDistance&& health <= 5)
+        {
+            SetState(AIState.run);
+        }
+        else if (playerDistance < detectDistance)
         {
             SetState(AIState.Attacking);
         }
@@ -162,6 +194,12 @@ public class SnowMonster : MonoBehaviour ,IDamagable
                 }
                 break;
             case AIState.Fleeing:
+                {
+                    agent.speed = runSpeed;
+                    agent.isStopped = false;
+                }
+                break;
+            case AIState.run:
                 {
                     agent.speed = runSpeed;
                     agent.isStopped = false;
@@ -228,8 +266,7 @@ public class SnowMonster : MonoBehaviour ,IDamagable
     public void TakePhysicalDamage(int damageAmount)
     {
         health -= damageAmount;
-        if (health <= 5)
-            agent.destination = (transform.position-player.transform.position)* 50;
+       
         if (health <= 0)
             Die();
 
