@@ -99,7 +99,7 @@ public class SnowMonster : MonoBehaviour ,IDamagable
         if (playerDistance < detectDistance)
         {
             agent.isStopped = false;
-            agent.SetDestination(transform.position - player.transform.position * 2);
+            agent.SetDestination(transform.position - player.transform.position * 1);
         }
         else
         {
