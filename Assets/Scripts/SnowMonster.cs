@@ -72,12 +72,15 @@ public class SnowMonster : MonoBehaviour ,IDamagable
     {
         playerDistance = Vector3.Distance(transform.position, player.transform.position);
         time = time + Time.deltaTime;
+
         if (time > _AttackTime && !_AttackTimeCheck)
         {
             detectDistance = 50;
             _AttackTimeCheck = true;
         }
+
         playerDistance = Vector3.Distance(transform.position, player.transform.position);
+
         if (playerDistance < detectDistance && health <= 5)
             SetState(AIState.run);
 
@@ -91,12 +94,11 @@ public class SnowMonster : MonoBehaviour ,IDamagable
             case AIState.Fleeing: FleeingUpdate(); break;
             case AIState.run: runUpdate(); break;
         }
-
     }
 
     private void runUpdate()
     {
-        if (playerDistance < attackDistance+2)
+        if (playerDistance < detectDistance)
         {
             agent.isStopped = false;
             agent.SetDestination(transform.position - player.transform.position * 1);
