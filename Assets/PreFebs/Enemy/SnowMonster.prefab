@@ -59,10 +59,10 @@ MonoBehaviour:
   maxWanderDistance: 10
   minWanderWaitTime: 1
   maxWanderWaitTime: 2
-  damage: 5
+  MonsterDMG: 0
   attackRate: 1
   attackDistance: 2
-  runDistance: 5
+  runDistance: 1
   player: {fileID: 0}
   fieldOfView: 120
   _AttackTime: 30

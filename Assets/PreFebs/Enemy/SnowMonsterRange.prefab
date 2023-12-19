@@ -623,6 +623,7 @@ MonoBehaviour:
   player: {fileID: 0}
   fieldOfView: 120
   _AttackTime: 30
+  dustParticleSystem: {fileID: 0}
 --- !u!195 &2448316762361830540
 NavMeshAgent:
   m_ObjectHideFlags: 0

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class MonsterManager : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class MonsterManager : MonoBehaviour
     private float _spawntime;
     private float _respawntime;
     public GameObject[] MonsterPrefebs;
+    public GameObject[] partPrefebs;
     public GameObject Player;
 
     public int count = 0;
@@ -20,6 +22,9 @@ public class MonsterManager : MonoBehaviour
     private Queue<GameObject> _spawnQueue = new Queue<GameObject>();
 
     private Vector3 _spawnPos;
+
+    [SerializeField]
+    private ParticleSystem ParticleSystem;
 
     private void Awake()
     {
@@ -40,17 +45,13 @@ public class MonsterManager : MonoBehaviour
 
     public  void split(GameObject snow)
     {
-        splitMonster[0] = Instantiate(MonsterPrefebs[0], snow.transform.position, Quaternion.identity);
-        splitMonster[0].GetComponent<SnowMonster>().player = Player;
-        
-        splitMonster[1] = Instantiate(MonsterPrefebs[0], snow.transform.position + Vector3.right*2, Quaternion.identity);
-        splitMonster[1].GetComponent<SnowMonster>().player = Player;
+        splitMonster[0] = Instantiate(partPrefebs[0], snow.transform.position, Quaternion.identity);      
+        splitMonster[1] = Instantiate(partPrefebs[1], snow.transform.position + new Vector3 (0.1f,0.1f,0) +Vector3.up *1, Quaternion.identity);
+        splitMonster[2] = Instantiate(partPrefebs[2], snow.transform.position + new Vector3(-0.1f, -0.1f,0)+Vector3.up *2, Quaternion.identity);
 
-        splitMonster[2] = Instantiate(MonsterPrefebs[0], snow.transform.position + Vector3.left*2, Quaternion.identity);
-        splitMonster[2].GetComponent<SnowMonster>().player = Player;
-        _spawnQueue.Enqueue(splitMonster[0]);
-        _spawnQueue.Enqueue(splitMonster[1]);
-        _spawnQueue.Enqueue(splitMonster[2]);
+        StartCoroutine(InitObject(splitMonster[0]));
+        StartCoroutine(InitObject(splitMonster[1]));
+        StartCoroutine(InitObject(splitMonster[2]));
     }
 
     public void spawn()
@@ -67,6 +68,7 @@ public class MonsterManager : MonoBehaviour
             GameObject selectedPrefab = MonsterPrefebs[selection];
             spawnMonster = Instantiate(selectedPrefab, _spawnPos, Quaternion.identity);
             spawnMonster.GetComponent<SnowMonster>().player = Player;
+            spawnMonster.GetComponent<SnowMonster>().ParticleSystem = ParticleSystem;
             _spawnQueue.Enqueue(spawnMonster);
             _spawntime = 0;
             count++;
@@ -78,4 +80,15 @@ public class MonsterManager : MonoBehaviour
         count--;
     }
 
+    IEnumerator InitObject(GameObject gameObject)
+    {
+        
+        yield return new WaitForSeconds(2f);
+        Debug.Log(gameObject);
+        _spawnQueue.Enqueue(gameObject);
+        gameObject.GetComponent<SnowMonster>().enabled = true;
+        gameObject.GetComponent<NavMeshAgent>().enabled = true;
+        gameObject.GetComponent<SnowMonster>().player = Player;
+        Destroy(gameObject.GetComponent<Rigidbody>());
+    }
 }

@@ -6,6 +6,7 @@ using UnityEditor;
 using UnityEditor.Build.Content;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.UIElements;
 
 public enum AIState
 {
@@ -58,6 +59,9 @@ public class SnowMonster : MonoBehaviour ,IDamagable
     private Animator animator;
     private MeshRenderer[] meshRenderers;
 
+
+    public ParticleSystem ParticleSystem;
+
     private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
@@ -87,8 +91,6 @@ public class SnowMonster : MonoBehaviour ,IDamagable
             detectDistance = 50;
             _AttackTimeCheck = true;
         }
-
-        playerDistance = Vector3.Distance(transform.position, player.transform.position);
 
         if (playerDistance < runDistance && health <= 5)
             SetState(AIState.run);
@@ -292,14 +294,23 @@ public class SnowMonster : MonoBehaviour ,IDamagable
         health -= damageAmount;
         if (IsRange && health <= 0)
         {
+            CreatetParticles();
+
+            Debug.Log("split");
             MonsterManager.instance.split(this.gameObject);
-            Destroy(this.gameObject, 0f);
+            this.gameObject.SetActive(false);
+            Destroy(this.gameObject, 3f);
         }
         if (health <= 0)
             Die();
-
+        else
         StartCoroutine(DamageFlash());
 
+    }
+    public void CreatetParticles()
+    {
+        ParticleSystem.transform.position = this.transform.position;
+        ParticleSystem.Play();
     }
 
     //데미지 테스트용 삭제하기
@@ -320,26 +331,25 @@ public class SnowMonster : MonoBehaviour ,IDamagable
 
     IEnumerator DamageFlash()
     {
-        Debug.Log(gameObject.name);
-        Debug.Log(meshRenderers.Length);
         MaterialPropertyBlock propBlock = new MaterialPropertyBlock();
 
         for (int x = 0; x < meshRenderers.Length; x++) {
+            meshRenderers[x].material.color = new Color(1.0f, 0.6f, 0.6f);
 
-            meshRenderers[x].GetPropertyBlock(propBlock);
+            /*meshRenderers[x].GetPropertyBlock(propBlock);
             propBlock.SetColor("_Color", new Color(1.0f, 0.6f, 0.6f));
-            meshRenderers[x].SetPropertyBlock(propBlock);
+            meshRenderers[x].SetPropertyBlock(propBlock);*/
         }
-
-
-        yield return new WaitForSeconds(0.1f);
-
+        //
+        yield return new WaitForSeconds(0.4f);
         for (int x = 0; x < meshRenderers.Length; x++) {
+            meshRenderers[x].material.color = Color.white;
 
-            meshRenderers[x].GetPropertyBlock(propBlock);
+           /* meshRenderers[x].GetPropertyBlock(propBlock);
             propBlock.SetColor("_Color", Color.white);
-            meshRenderers[x].SetPropertyBlock(propBlock);
+            meshRenderers[x].SetPropertyBlock(propBlock);*/
         }
 
     }
 }
+
