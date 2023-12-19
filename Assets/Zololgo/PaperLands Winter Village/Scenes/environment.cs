@@ -1,12 +1,26 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class environment : MonoBehaviour
 {
-    public GameObject rock;
-    public GameObject tree;
-    public GameObject coal;
+    public float cooltime; // 쿨타임, 감소값
+    public float pertime; // 쿨타임, 절대값
+
+    public Transform coaltransform; // 석탄 생성 위치
+    public Transform coaltransform1; // 석탄 생성 위치1
+    public Transform coaltransform2; // 석탄 생성 위치2
+    public Transform coaltransform3; // 석탄 생성 위치3
+    public Transform coaltransform4; // 석탄 생성 위치4
+    public Transform coaltransform5; // 석탄 생성 위치5
+
+
+
+    public GameObject rock; /// 돌 오브젝트 1~@
+    public GameObject tree; /// 나무 오브젝트 1~@
+    public GameObject coal; /// 석탄 오브젝트 1~@
+
     public GameObject rock1;
     public GameObject tree1;
     public GameObject coal1;
@@ -37,10 +51,28 @@ public class environment : MonoBehaviour
   
     void Update()
     {
+
+        cooltime -= Time.deltaTime; // 쿨타임 감소
+
+        if (Input.GetKey(KeyCode.Alpha1)) // 임시로 바위 제거
+        {
+            Debug.Log("임시로 바위 제거");
+            coal.SetActive(false); // 석탄 비활성화
+        }
+
+      
+
+        if (cooltime <= 0)
+        {
+            coal.SetActive(true); // 석탄 활성화
+            cooltime = pertime; // 쿨타임 초기화
+        }
+
         
+
     }
 
-    public void Environmentinstiate()
+    public void Environmentinstiate() // 테스트 코드
     {
         
     }
