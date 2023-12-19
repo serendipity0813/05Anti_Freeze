@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
+using UnityEditor;
 using UnityEditor.Build.Content;
 using UnityEngine;
 using UnityEngine.AI;
@@ -55,13 +56,13 @@ public class SnowMonster : MonoBehaviour ,IDamagable
 
     private NavMeshAgent agent;
     private Animator animator;
-    private SkinnedMeshRenderer[] meshRenderers;
+    private MeshRenderer[] meshRenderers;
 
     private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
         animator = GetComponentInChildren<Animator>();
-        meshRenderers = GetComponentsInChildren<SkinnedMeshRenderer>();
+        meshRenderers = GetComponentsInChildren<MeshRenderer>();
     }
 
     private void Start()
@@ -298,8 +299,10 @@ public class SnowMonster : MonoBehaviour ,IDamagable
             Die();
 
         StartCoroutine(DamageFlash());
+
     }
 
+    //데미지 테스트용 삭제하기
     private void OnCollisionEnter(Collision collision)
     {
         TakePhysicalDamage(3);
@@ -317,11 +320,26 @@ public class SnowMonster : MonoBehaviour ,IDamagable
 
     IEnumerator DamageFlash()
     {
-        for (int x = 0; x < meshRenderers.Length; x++)
-            meshRenderers[x].material.color = new Color(1.0f, 0.6f, 0.6f);
+        Debug.Log(gameObject.name);
+        Debug.Log(meshRenderers.Length);
+        MaterialPropertyBlock propBlock = new MaterialPropertyBlock();
+
+        for (int x = 0; x < meshRenderers.Length; x++) {
+
+            meshRenderers[x].GetPropertyBlock(propBlock);
+            propBlock.SetColor("_Color", new Color(1.0f, 0.6f, 0.6f));
+            meshRenderers[x].SetPropertyBlock(propBlock);
+        }
+
 
         yield return new WaitForSeconds(0.1f);
-        for (int x = 0; x < meshRenderers.Length; x++)
-            meshRenderers[x].material.color = Color.white;
+
+        for (int x = 0; x < meshRenderers.Length; x++) {
+
+            meshRenderers[x].GetPropertyBlock(propBlock);
+            propBlock.SetColor("_Color", Color.white);
+            meshRenderers[x].SetPropertyBlock(propBlock);
+        }
+
     }
 }

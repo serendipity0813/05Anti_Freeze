@@ -7,8 +7,8 @@ using UnityEngine;
 public class MonsterManager : MonoBehaviour
 {
     public static MonsterManager instance;
-    private float _checktime;
-    private float _time;
+    private float _spawntime;
+    private float _respawntime;
     public GameObject[] MonsterPrefebs;
     public GameObject Player;
 
@@ -27,13 +27,14 @@ public class MonsterManager : MonoBehaviour
     }
     void Update()
     {
-        _time = _time + Time.deltaTime;
-        _checktime = _checktime + Time.deltaTime;
+        _respawntime = _respawntime + Time.deltaTime;
+        _spawntime = _spawntime + Time.deltaTime;
+
         spawn();
-        if (_time>5)
+        if (_respawntime > 30)
         {
             destrymonster();
-            _time = 0;
+            _respawntime = 0;
         }
     }
 
@@ -54,7 +55,7 @@ public class MonsterManager : MonoBehaviour
 
     public void spawn()
     {
-        if (_respawnTime - _checktime < 0 && count < 5)
+        if (_respawnTime - _spawntime < 0 && count < 5)
         {
             float randomX = Random.Range(-10f, 10f);
             float randomY = 1f;
@@ -67,7 +68,7 @@ public class MonsterManager : MonoBehaviour
             spawnMonster = Instantiate(selectedPrefab, _spawnPos, Quaternion.identity);
             spawnMonster.GetComponent<SnowMonster>().player = Player;
             _spawnQueue.Enqueue(spawnMonster);
-            _checktime = 0;
+            _spawntime = 0;
             count++;
         }
     }
