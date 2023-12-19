@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
+using UnityEditor;
 using UnityEngine;
 
 public class MonsterManager : MonoBehaviour
@@ -12,6 +13,7 @@ public class MonsterManager : MonoBehaviour
 
     public int count = 0;
     private GameObject spawnMonster;
+    private GameObject[] splitMonster= new GameObject[3];
     private int _respawnTime = 3;
     private bool _respawnCheck;
 
@@ -40,5 +42,17 @@ public class MonsterManager : MonoBehaviour
             count++;
         }
     }
-    
+
+    public  void split(GameObject snow)
+    {
+        splitMonster[0] = Instantiate(MonsterPrefebs[0], snow.transform.position, Quaternion.identity);
+        splitMonster[0].GetComponent<SnowMonster>().player = Player;
+
+        splitMonster[1] = Instantiate(MonsterPrefebs[0], snow.transform.position + Vector3.right*2, Quaternion.identity);
+        splitMonster[1].GetComponent<SnowMonster>().player = Player;
+
+        splitMonster[2] = Instantiate(MonsterPrefebs[0], snow.transform.position + Vector3.left*2, Quaternion.identity);
+        splitMonster[2].GetComponent<SnowMonster>().player = Player;
+    }
+
 }

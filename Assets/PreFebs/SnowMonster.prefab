@@ -57,11 +57,12 @@ MonoBehaviour:
   safeDistance: 8
   minWanderDistance: 5
   maxWanderDistance: 10
-  minWanderWaitTime: 3
-  maxWanderWaitTime: 5
+  minWanderWaitTime: 1
+  maxWanderWaitTime: 2
   damage: 5
-  attackRate: 2
+  attackRate: 1
   attackDistance: 2
+  runDistance: 5
   player: {fileID: 0}
   fieldOfView: 120
   _AttackTime: 30

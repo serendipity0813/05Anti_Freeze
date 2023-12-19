@@ -44,10 +44,11 @@ public class SnowMonster : MonoBehaviour ,IDamagable
     public float attackRate;
     private float lastAttackTime;
     public float attackDistance;
+    public float runDistance;
     private float playerDistance;
 
     public GameObject player;
-    public float fieldOfView = 60f;
+    public float fieldOfView = 120f;
     private float time;
     private bool _AttackTimeCheck = false;
     public  float _AttackTime = 10;
@@ -70,6 +71,13 @@ public class SnowMonster : MonoBehaviour ,IDamagable
 
     private void Update()
     {
+
+        /*if (IsRange && health <= 0)// 죽으면 테스트
+        {
+            MonsterManager.instance.split(this.gameObject);
+            Destroy(this.gameObject,0f);
+        }*/
+
         playerDistance = Vector3.Distance(transform.position, player.transform.position);
         time = time + Time.deltaTime;
 
@@ -81,7 +89,7 @@ public class SnowMonster : MonoBehaviour ,IDamagable
 
         playerDistance = Vector3.Distance(transform.position, player.transform.position);
 
-        if (playerDistance < detectDistance && health <= 5)
+        if (playerDistance < runDistance && health <= 5)
             SetState(AIState.run);
 
         animator.SetBool("Moving", aiState != AIState.Idle);
@@ -98,7 +106,7 @@ public class SnowMonster : MonoBehaviour ,IDamagable
 
     private void runUpdate()
     {
-        if (playerDistance < detectDistance)
+        if (playerDistance < runDistance)
         {
             agent.isStopped = false;
             agent.SetDestination(transform.position - player.transform.position * 1);
@@ -123,7 +131,7 @@ public class SnowMonster : MonoBehaviour ,IDamagable
 
     private void AttackingUpdate()
     {
-        if ((playerDistance>attackDistance &&playerDistance < detectDistance) || !IsPlaterInFireldOfView())
+        if ((playerDistance > attackDistance) || !IsPlaterInFireldOfView())
         {
             agent.isStopped = false;
             NavMeshPath path = new NavMeshPath();
@@ -148,6 +156,10 @@ public class SnowMonster : MonoBehaviour ,IDamagable
                 if (IsRange)
                 {
                     transform.LookAt(player.transform);
+                    if (transform.localScale.x > 0.5f)
+                    {
+                        transform.localScale = transform.localScale * 0.98f;
+                    }
                     GameObject bullet = Instantiate(Bullet,transform.position,transform.rotation);
                     Destroy(bullet, 2f);
                 }
@@ -163,11 +175,11 @@ public class SnowMonster : MonoBehaviour ,IDamagable
             Invoke("WanderToNewLocation", Random.Range(minWanderWaitTime, maxWanderWaitTime));
         }
 
-        if (playerDistance < detectDistance&& health <= 5)
+        if (playerDistance < runDistance&& health <= 5)
         {
             SetState(AIState.run);
         }
-        else if (playerDistance < attackDistance)
+        else if (playerDistance < detectDistance)
         {
             SetState(AIState.Attacking);
         }
@@ -277,12 +289,18 @@ public class SnowMonster : MonoBehaviour ,IDamagable
     public void TakePhysicalDamage(int damageAmount)
     {
         health -= damageAmount;
-       
+        if (IsRange && health <= 0)
+        {
+            MonsterManager.instance.split(this.gameObject);
+            Destroy(this.gameObject, 0f);
+        }
         if (health <= 0)
             Die();
 
         StartCoroutine(DamageFlash());
     }
+
+
 
     void Die()
     {
