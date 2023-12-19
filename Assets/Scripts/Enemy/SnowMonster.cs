@@ -40,7 +40,7 @@ public class SnowMonster : MonoBehaviour ,IDamagable
 
 
     [Header("Combat")]
-    public int damage;
+    public int MonsterDMG;
     public float attackRate;
     private float lastAttackTime;
     public float attackDistance;
@@ -300,7 +300,10 @@ public class SnowMonster : MonoBehaviour ,IDamagable
         StartCoroutine(DamageFlash());
     }
 
-
+    private void OnCollisionEnter(Collision collision)
+    {
+        TakePhysicalDamage(3);
+    }
 
     void Die()
     {
