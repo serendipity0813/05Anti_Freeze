@@ -15,4 +15,7 @@ public class HpbarCam : MonoBehaviour
     {
         transform.LookAt(transform.position+cam.rotation*Vector3.forward,cam.rotation*Vector3.up);
     }
+
+    //TODO
+
 }
