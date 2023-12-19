@@ -25,7 +25,7 @@ public class movep : MonoBehaviour
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Bullet")){
             Debug.Log("충돌체크");
-            //데미지
+            //데미지 
             other.gameObject.SetActive(false);
         }
     }
