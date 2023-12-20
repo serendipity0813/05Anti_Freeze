@@ -54,18 +54,15 @@ public class ArchitectManager : MonoBehaviour
         }
     }
 
-
     //건물 생성 함수
     public void MakeWall()
     {
-        WallFloor.SetActive(false);
         Wall1.SetActive(true);
     }
 
 
     public void MakeHouse()
     {
-        Debug.Log("MakeHouse");
         HouseFloor.SetActive(false);
         House1.SetActive(true);
     }
@@ -73,43 +70,36 @@ public class ArchitectManager : MonoBehaviour
 
     public void MakeStorage()
     {
-        StorageFloor.SetActive(false);
         Storage1.SetActive(true);
     }
 
     public void MakeFarm()
     {
-        FarmFloor.SetActive(false);
         Farm1.SetActive(true);
     }
 
     public void MakeTemple()
     {
-        TempleFloor.SetActive(false);
         Temple1.SetActive(true);
     }
 
     public void MakeBarrack()
     {
-        BarrackFloor.SetActive(false);
         Barrack1.SetActive(true);
     }
 
     public void MakeArchery()
     {
-        ArcheryFloor.SetActive(false);
         Archery1.SetActive(true);
     }
 
     public void MakeCenter()
     {
-        CenterFloor.SetActive(false);
         Center1.SetActive(true);
     }
 
     public void MakeTower()
     {
-        TowerFloor.SetActive(false);
         Tower1.SetActive(true);
     }
 
@@ -137,39 +127,46 @@ public class ArchitectManager : MonoBehaviour
     {
         Storage1.SetActive(false);
         Storage2.SetActive(true);
+        StorageFloor.SetActive(false);
     }
 
     public void UpgradeFarm()
     {
         Farm2.SetActive(false);
         Farm3.SetActive(true);
+        FarmFloor.SetActive(false);
     }
 
     public void UpgradeTemple()
     {
         Temple2.SetActive(false);
         Temple3.SetActive(true);
+        TempleFloor.SetActive(false);
     }
     public void UpgradeBarrack()
     {
         Barrack1.SetActive(false);
         Barrack2.SetActive(true);
+        BarrackFloor.SetActive(false);
     }
 
     public void UpgradeArchery()
     {
         Archery1.SetActive(false);
         Archery2.SetActive(true);
+        ArcheryFloor.SetActive(false);
     }
     public void UpgradeCenter()
     {
         Center1.SetActive(false);
         Center2.SetActive(true);
+        CenterFloor.SetActive(false);
     }
 
     public void UpgradeTower()
     {
         Tower1.SetActive(false);
         Tower2.SetActive(true);
+        TowerFloor.SetActive(false);
     }
 }

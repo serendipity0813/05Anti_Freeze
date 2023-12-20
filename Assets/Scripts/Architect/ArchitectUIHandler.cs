@@ -40,7 +40,7 @@ public class ArchitectUIHandler : MonoBehaviour
     private bool[] BuildingCheck
     {
         get { return buildingCheck; }
-        set { buildingCheck = value; Debug.Log("abc"); }
+        set { buildingCheck = value; }
     }
         private bool[] buildingCheck;
 
@@ -60,7 +60,6 @@ public class ArchitectUIHandler : MonoBehaviour
 
     private void MakeBuilding(BuildingType type)
     {
-        Debug.Log("MakeBuilding");
         switch (type)
         {
             case BuildingType.Wall:
@@ -70,7 +69,6 @@ public class ArchitectUIHandler : MonoBehaviour
                 break;
 
             case BuildingType.House:
-                Debug.Log("ChooseHouse");
                 ArchitectManager.Instance.MakeHouse();
                 buildingLevel[1]++;
                 BuildingCheck[1] = false;
@@ -121,6 +119,7 @@ public class ArchitectUIHandler : MonoBehaviour
 
         }
 
+        MakeBuildingUI.SetActive(false);
     }
 
     private void UpgradeBuilding(BuildingType type)
@@ -175,13 +174,12 @@ public class ArchitectUIHandler : MonoBehaviour
                 BuildingCheck[8] = false;
                 break;
         }
-
+        UpgradeBuildingUI.SetActive(false);
     }
 
 
     private void ShowArcitectUI(BuildingType type)
     {
-        Debug.Log("Showui");
         switch(type)
         {
             case BuildingType.Wall:
@@ -324,17 +322,12 @@ public class ArchitectUIHandler : MonoBehaviour
     #region
 
     public void MakeBtn()
-    {
-        Debug.Log("MakeBtn");
-        Debug.Log(BuildingCheck[1]);
+    {    
 
         if (BuildingCheck[0])
             MakeWall();
-        else if (BuildingCheck[1] == true)
-        {
-            Debug.Log("CallMakeHouse");
+        else if (BuildingCheck[1])
             MakeHouse();
-        }
         else if (BuildingCheck[2])
             MakeStorage();
         else if (BuildingCheck[3])
@@ -368,7 +361,6 @@ public class ArchitectUIHandler : MonoBehaviour
 
     private void MakeHouse()
     {
-        Debug.Log(BuildingCheck[1]);
         if (buildingLevel[1] == 0)
             MakeBuilding(BuildingType.House);
         else if (buildingLevel[1] == 1)
@@ -458,7 +450,6 @@ public class ArchitectUIHandler : MonoBehaviour
         if (buildingLevel[1] == 0)
         {
             BuildingCheck[1] = true;
-            Debug.Log(BuildingCheck[1]);
             ShowArcitectUI(BuildingType.House);
         }
         else
@@ -481,33 +472,37 @@ public class ArchitectUIHandler : MonoBehaviour
             BuildingCheck[2] = true;
         }
     }
-    public void ShowFarmUI()
-    {
-        if (buildingLevel[3] == 0)
-        {
-            ShowArcitectUI(BuildingType.Farm);
-            BuildingCheck[3] = true;
-        }
-        else
-        {
-            ShowUpgradeUI(BuildingType.Farm);
-            BuildingCheck[3] = true;
-        }
-    }
 
     public void ShowTempleUI()
     {
-        if (buildingLevel[4] == 0)
+        if (buildingLevel[3] == 0)
         {
             ShowArcitectUI(BuildingType.Temple);
-            BuildingCheck[4] = true;
+            BuildingCheck[3] = true;
         }
         else
         {
             ShowUpgradeUI(BuildingType.Temple);
+            BuildingCheck[3] = true;
+        }
+    }
+
+
+    public void ShowFarmUI()
+    {
+        if (buildingLevel[4] == 0)
+        {
+            ShowArcitectUI(BuildingType.Farm);
+            BuildingCheck[4] = true;
+        }
+        else
+        {
+            ShowUpgradeUI(BuildingType.Farm);
             BuildingCheck[4] = true;
         }
     }
+
+    
 
     public void ShowTowerUI()
     {

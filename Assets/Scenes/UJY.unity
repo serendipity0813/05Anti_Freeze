@@ -1372,7 +1372,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1444801093}
+      - m_Target: {fileID: 1368412491}
         m_TargetAssemblyTypeName: ArchitectUIHandler, Assembly-CSharp
         m_MethodName: ShowStorageUI
         m_Mode: 1
@@ -1582,7 +1582,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1444801093}
+      - m_Target: {fileID: 1368412491}
         m_TargetAssemblyTypeName: ArchitectUIHandler, Assembly-CSharp
         m_MethodName: ShowCenterUI
         m_Mode: 1
@@ -1957,7 +1957,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1444801093}
+      - m_Target: {fileID: 1368412491}
         m_TargetAssemblyTypeName: ArchitectUIHandler, Assembly-CSharp
         m_MethodName: ShowArcheryUI
         m_Mode: 1
@@ -2513,7 +2513,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1444801093}
+      - m_Target: {fileID: 1368412491}
         m_TargetAssemblyTypeName: ArchitectUIHandler, Assembly-CSharp
         m_MethodName: ShowWallUI
         m_Mode: 1
@@ -3260,7 +3260,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1444801093}
+      - m_Target: {fileID: 1368412491}
         m_TargetAssemblyTypeName: ArchitectUIHandler, Assembly-CSharp
         m_MethodName: ShowTempleUI
         m_Mode: 1
@@ -4890,7 +4890,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1444801093}
+      - m_Target: {fileID: 1368412491}
         m_TargetAssemblyTypeName: ArchitectUIHandler, Assembly-CSharp
         m_MethodName: ShowBarrackUI
         m_Mode: 1
@@ -5609,7 +5609,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1444801093}
+      - m_Target: {fileID: 1368412491}
         m_TargetAssemblyTypeName: ArchitectUIHandler, Assembly-CSharp
         m_MethodName: ShowFarmUI
         m_Mode: 1
@@ -6244,7 +6244,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1444801091}
   - component: {fileID: 1444801092}
-  - component: {fileID: 1444801093}
   m_Layer: 0
   m_Name: ArchitectManager
   m_TagString: Untagged
@@ -6310,30 +6309,6 @@ MonoBehaviour:
   Barrack2: {fileID: 9003867646906764586}
   Center2: {fileID: 5363697334105088049}
   Archery2: {fileID: 4071798479675259986}
---- !u!114 &1444801093
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1444801090}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7d13c3b684485f047837e4259e06a334, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MakeBuildingUI: {fileID: 1809391458}
-  UpgradeBuildingUI: {fileID: 2055178725}
-  FailUI: {fileID: 1158829830}
-  WallUpgradeFailUI: {fileID: 2089881892}
-  nameTxt: {fileID: 1222161257}
-  descriptionTxt: {fileID: 1447705029}
-  ingredient1Txt: {fileID: 1204809355}
-  ingredient2Txt: {fileID: 1562309253}
-  upgradenameTxt: {fileID: 1597667211}
-  upgradedescriptionTxt: {fileID: 644862975}
-  upgradeingredient1Txt: {fileID: 717126883}
-  upgradeingredient2Txt: {fileID: 335673797}
 --- !u!1 &1447705027
 GameObject:
   m_ObjectHideFlags: 0
@@ -7348,7 +7323,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1444801093}
+      - m_Target: {fileID: 1368412491}
         m_TargetAssemblyTypeName: ArchitectUIHandler, Assembly-CSharp
         m_MethodName: ShowHouseUI
         m_Mode: 1
@@ -8894,7 +8869,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1444801093}
+      - m_Target: {fileID: 1368412491}
         m_TargetAssemblyTypeName: ArchitectUIHandler, Assembly-CSharp
         m_MethodName: ShowTowerUI
         m_Mode: 1
@@ -12008,7 +11983,6 @@ GameObject:
   - component: {fileID: 3784168273836221923}
   - component: {fileID: 3784168273836221922}
   - component: {fileID: 3784168273836221921}
-  - component: {fileID: 3784168273836221929}
   m_Layer: 13
   m_Name: House1
   m_TagString: Untagged
@@ -12362,62 +12336,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.6, y: 0.5, z: 0.1}
   m_Center: {x: -0.5, y: 0.4, z: 0.1}
---- !u!114 &3784168273836221929
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3622246010362740704}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 0}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1444801093}
-        m_TargetAssemblyTypeName: ArchitectUIHandler, Assembly-CSharp
-        m_MethodName: ShowHouseUI
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!4 &3906248738420864105
 Transform:
   m_ObjectHideFlags: 0
