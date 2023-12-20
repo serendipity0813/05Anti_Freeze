@@ -107,8 +107,11 @@ public class ArchitectManager : MonoBehaviour
     public void UpgradeWall()
     {
         Wall1.SetActive(false);
+        WallFloor.SetActive(false);
         Farm1.SetActive(false);
+        FarmFloor.SetActive(false);
         Temple1.SetActive(false);
+        TempleFloor.SetActive(false);
         House1.SetActive(false);
 
         Wall2.SetActive(true);

@@ -184,7 +184,7 @@ public class ArchitectUIHandler : MonoBehaviour
         {
             case BuildingType.Wall:
                 nameTxt.text = "Make Wall";
-                descriptionTxt.text = "Protection against the intrusion of monsters";
+                descriptionTxt.text = "Protection against monsters";
                 ingredient1Txt.text = "-20";
                 ingredient2Txt.text = "0";
                 break;
