@@ -191,7 +191,7 @@ public class ArchitectUIHandler : MonoBehaviour
 
             case BuildingType.House:
                 nameTxt.text = "Make House";
-                descriptionTxt.text = "+5 HP / S";
+                descriptionTxt.text = "+1 Temp / S";
                 ingredient1Txt.text = "-10";
                 ingredient2Txt.text = "-10";
                 break;
@@ -205,14 +205,14 @@ public class ArchitectUIHandler : MonoBehaviour
 
             case BuildingType.Temple:
                 nameTxt.text = "Make Temple";
-                descriptionTxt.text = "When a character dies, experience a miracle";
+                descriptionTxt.text = "Make Water";
                 ingredient1Txt.text = "-30";
                 ingredient2Txt.text = "-0";
                 break;
 
             case BuildingType.Farm:
                 nameTxt.text = "Make Farm";
-                descriptionTxt.text = "+1 Hunger / S";
+                descriptionTxt.text = "Make Carrot";
                 ingredient1Txt.text = "-10";
                 ingredient2Txt.text = "-10";
                 break;
@@ -233,7 +233,7 @@ public class ArchitectUIHandler : MonoBehaviour
 
             case BuildingType.Center:
                 nameTxt.text = "Make Center";
-                descriptionTxt.text = "+1 Temp / S";
+                descriptionTxt.text = "+1 HP / S";
                 ingredient1Txt.text = "-30";
                 ingredient2Txt.text = "-10";
                 break;
@@ -271,14 +271,14 @@ public class ArchitectUIHandler : MonoBehaviour
 
             case BuildingType.Temple:
                 upgradenameTxt.text = "upgrade Temple";
-                upgradedescriptionTxt.text = "experience Super miracle";
+                upgradedescriptionTxt.text = "Make More Water";
                 upgradeingredient1Txt.text = "-0";
                 upgradeingredient2Txt.text = "-30";
                 break;
 
             case BuildingType.Farm:
                 upgradenameTxt.text = "upgrade Farm";
-                upgradedescriptionTxt.text = "+3 Hunger / S";
+                upgradedescriptionTxt.text = "Make More Carrot";
                 upgradeingredient1Txt.text = "0";
                 upgradeingredient2Txt.text = "-20";
                 break;
