@@ -25,7 +25,7 @@ public class House : MonoBehaviour
         if (House1.activeSelf == true && InOutCheck == true)
         {
             Debug.Log(condition.Temperature.curValue);
-            if(condition.Temperature.curValue < 36)
+            if(condition.Temperature.curValue < 100)
             {
                 condition.Temperature.Add(1);
                 if (Tower1.activeSelf == true)
