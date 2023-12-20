@@ -219,14 +219,14 @@ public class ArchitectUIHandler : MonoBehaviour
 
             case BuildingType.Tower:
                 nameTxt.text = "Make Tower";
-                descriptionTxt.text = "Your field of view will be expanded.";
+                descriptionTxt.text = "+1 Temp / S";
                 ingredient1Txt.text = "-20";
                 ingredient2Txt.text = "0";
                 break;
 
             case BuildingType.Barrack:
                 nameTxt.text = "Make Barrack";
-                descriptionTxt.text = "+10 ATK";
+                descriptionTxt.text = "Get New Weapon";
                 ingredient1Txt.text = "-20";
                 ingredient2Txt.text = "-0";
                 break;
@@ -285,13 +285,13 @@ public class ArchitectUIHandler : MonoBehaviour
 
             case BuildingType.Tower:
                 upgradenameTxt.text = "upgrade Tower";
-                upgradedescriptionTxt.text = "Your field of view will be expanded more.";
+                upgradedescriptionTxt.text = "+2 Temp / S.";
                 upgradeingredient1Txt.text = "0";
                 upgradeingredient2Txt.text = "-20";
                 break;
 
             case BuildingType.Barrack:
-                upgradenameTxt.text = "upgrade Barrack";
+                upgradenameTxt.text = "Get Special Weapon";
                 upgradedescriptionTxt.text = "+20 ATK";
                 upgradeingredient1Txt.text = "-0";
                 upgradeingredient2Txt.text = "-20";
@@ -299,7 +299,7 @@ public class ArchitectUIHandler : MonoBehaviour
 
             case BuildingType.Center:
                 upgradenameTxt.text = "upgrade Center";
-                upgradedescriptionTxt.text = "+3 Temp / S";
+                upgradedescriptionTxt.text = "+2 HP / S";
                 upgradeingredient1Txt.text = "-10";
                 upgradeingredient2Txt.text = "-30";
                 break;
