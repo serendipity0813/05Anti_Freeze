@@ -380,7 +380,13 @@ public class ArchitectUIHandler : MonoBehaviour
         if (buildingLevel[3] == 0)
             MakeBuilding(BuildingType.Temple);
         else if (buildingLevel[3] == 1)
-            UpgradeBuilding(BuildingType.Temple);
+        {
+            if (buildingLevel[0] == 2)
+                UpgradeBuilding(BuildingType.Temple);
+            else
+                WallUpgradeFailUI.SetActive(true);
+        }
+       
     }
 
 
@@ -389,7 +395,12 @@ public class ArchitectUIHandler : MonoBehaviour
         if (buildingLevel[4] == 0)
             MakeBuilding(BuildingType.Farm);
         else if (buildingLevel[4] == 1)
-            UpgradeBuilding(BuildingType.Farm);
+        {
+            if (buildingLevel[0] == 2)
+                UpgradeBuilding(BuildingType.Farm);
+            else
+                WallUpgradeFailUI.SetActive(true);
+        }
     }
 
 
