@@ -33,7 +33,6 @@ public class ArchitectManager : MonoBehaviour
 
     [Header("Building2")]
     public GameObject Wall2;
-    public GameObject House2;
     public GameObject Storage2;
     public GameObject Farm2;
     public GameObject Farm3;
@@ -107,14 +106,16 @@ public class ArchitectManager : MonoBehaviour
     public void UpgradeWall()
     {
         Wall1.SetActive(false);
+        WallFloor.SetActive(false);
         Farm1.SetActive(false);
+        FarmFloor.SetActive(false);
         Temple1.SetActive(false);
+        TempleFloor.SetActive(false);
         House1.SetActive(false);
 
         Wall2.SetActive(true);
         Farm2.SetActive(true);
         Temple2.SetActive(true);
-        House2.SetActive(true);
 
         CenterFloor.SetActive(true);
         BarrackFloor.SetActive(true);
