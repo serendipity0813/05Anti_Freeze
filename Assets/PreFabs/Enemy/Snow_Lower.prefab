@@ -178,7 +178,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IsRange: 0
   Bullet: {fileID: 4786867317314586768, guid: 5c5b7b8d5c7b81045a37ed6acbd29a64, type: 3}
-  health: 50
+  health: 4
   walkSpeed: 1
   runSpeed: 2
   dropOnDeath: []
@@ -188,13 +188,14 @@ MonoBehaviour:
   maxWanderDistance: 3
   minWanderWaitTime: 2
   maxWanderWaitTime: 3
-  MonsterDMG: 0
+  MonsterDMG: 1
   attackRate: 1
   attackDistance: 2
-  runDistance: 3
+  runDistance: 1
   player: {fileID: 0}
   fieldOfView: 120
   _AttackTime: 30
+  ParticleSystem: {fileID: 0}
 --- !u!54 &-5373710357671618546
 Rigidbody:
   m_ObjectHideFlags: 0

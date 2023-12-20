@@ -10,14 +10,14 @@ public class MonsterManager : MonoBehaviour
     public static MonsterManager instance;
     private float _spawntime;
     private float _respawntime;
-    public GameObject[] MonsterPrefebs;
-    public GameObject[] partPrefebs;
+    public GameObject[] MonsterPrefabs;
+    public GameObject[] partPrefabs;
     public GameObject Player;
 
     public int count = 0;
     private GameObject spawnMonster;
     private GameObject[] splitMonster= new GameObject[3];
-    private int _respawnTime = 3;
+    private int _respawnRate = 3;
     private bool _respawnCheck;
     private Queue<GameObject> _spawnQueue = new Queue<GameObject>();
 
@@ -45,9 +45,13 @@ public class MonsterManager : MonoBehaviour
 
     public  void split(GameObject snow)
     {
-        splitMonster[0] = Instantiate(partPrefebs[0], snow.transform.position, Quaternion.identity);      
-        splitMonster[1] = Instantiate(partPrefebs[1], snow.transform.position + new Vector3 (0.1f,0.1f,0) +Vector3.up *1, Quaternion.identity);
-        splitMonster[2] = Instantiate(partPrefebs[2], snow.transform.position + new Vector3(-0.1f, -0.1f,0)+Vector3.up *2, Quaternion.identity);
+        splitMonster[0] = Instantiate(partPrefabs[0], snow.transform.position, Quaternion.identity);      
+        splitMonster[1] = Instantiate(partPrefabs[1], snow.transform.position + new Vector3 (0.1f,0.1f,0) +Vector3.up *1, Quaternion.identity);
+        splitMonster[2] = Instantiate(partPrefabs[2], snow.transform.position + new Vector3(-0.1f, -0.1f,0)+Vector3.up *2, Quaternion.identity);
+
+        splitMonster[0].transform.localScale = snow.transform.localScale;
+        splitMonster[1].transform.localScale = snow.transform.localScale;
+        splitMonster[2].transform.localScale = snow.transform.localScale;
 
         StartCoroutine(InitObject(splitMonster[0]));
         StartCoroutine(InitObject(splitMonster[1]));
@@ -56,16 +60,16 @@ public class MonsterManager : MonoBehaviour
 
     public void spawn()
     {
-        if (_respawnTime - _spawntime < 0 && count < 5)
+        if (_respawnRate - _spawntime < 0 && count < 5)
         {
             float randomX = Random.Range(-10f, 10f);
             float randomY = 1f;
             float randomz = Random.Range(-10f, 10f);
             _spawnPos = new Vector3(randomX, randomY, randomz);
 
-            int selection = Random.Range(0, MonsterPrefebs.Length);
+            int selection = Random.Range(0, MonsterPrefabs.Length);
 
-            GameObject selectedPrefab = MonsterPrefebs[selection];
+            GameObject selectedPrefab = MonsterPrefabs[selection];
             spawnMonster = Instantiate(selectedPrefab, _spawnPos, Quaternion.identity);
             spawnMonster.GetComponent<SnowMonster>().player = Player;
             spawnMonster.GetComponent<SnowMonster>().ParticleSystem = ParticleSystem;
@@ -83,7 +87,7 @@ public class MonsterManager : MonoBehaviour
     IEnumerator InitObject(GameObject gameObject)
     {
         
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(3f);
         Debug.Log(gameObject);
         _spawnQueue.Enqueue(gameObject);
         gameObject.GetComponent<SnowMonster>().enabled = true;

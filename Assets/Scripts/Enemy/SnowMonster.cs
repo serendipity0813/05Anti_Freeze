@@ -153,7 +153,7 @@ public class SnowMonster : MonoBehaviour ,IDamagable
             if (Time.time - lastAttackTime > attackRate)
             {
                 lastAttackTime = Time.time;
-                //player.GetComponent<IDamagable>().TakePhysicalDamage(damage);
+                player.GetComponent<IDamagable>().TakePhysicalDamage(MonsterDMG);
                 animator.speed = 1;
                 animator.SetTrigger("Attack");
                 if (IsRange)
@@ -314,10 +314,11 @@ public class SnowMonster : MonoBehaviour ,IDamagable
     }
 
     //데미지 테스트용 삭제하기
-    private void OnCollisionEnter(Collision collision)
-    {
-        TakePhysicalDamage(3);
-    }
+
+        /*private void OnCollisionEnter(Collision collision)
+        {
+            TakePhysicalDamage(3);
+        }*/
 
     void Die()
     {
