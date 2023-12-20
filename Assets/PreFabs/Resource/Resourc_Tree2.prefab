@@ -86,7 +86,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemToGive: {fileID: 11400000, guid: 9b8b900ef530ed04ead0faf25eec1038, type: 2}
   quantityPerHit: 1
-  capacity: 5
+  capacity: 3
 --- !u!1001 &693559892775572087
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -84,9 +84,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68568591228c85c4380b89faf75e0358, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemToGive: {fileID: 11400000, guid: 9b8b900ef530ed04ead0faf25eec1038, type: 2}
+  itemToGive: {fileID: 11400000, guid: 27fd33f95e096ef48afd3a9b326377e3, type: 2}
   quantityPerHit: 1
-  capacity: 5
+  capacity: 3
 --- !u!1001 &955307496588597985
 PrefabInstance:
   m_ObjectHideFlags: 0

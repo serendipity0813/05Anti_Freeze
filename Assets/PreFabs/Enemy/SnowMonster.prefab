@@ -62,7 +62,7 @@ MonoBehaviour:
   maxWanderWaitTime: 2
   MonsterDMG: 0
   attackRate: 1
-  attackDistance: 2
+  attackDistance: 3
   runDistance: 1
   player: {fileID: 0}
   fieldOfView: 120

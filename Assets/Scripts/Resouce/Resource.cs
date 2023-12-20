@@ -24,11 +24,12 @@ public class Resource : MonoBehaviour
         }
     }
 
+
     /// <summary>
     /// 자원 수집 테스트용
     /// </summary>
     /// <param name="collision"></param>
-    private void OnCollisionEnter(Collision collision)
+   /* private void OnCollisionEnter(Collision collision)
     {
         for (int i = 0; i < quantityPerHit; i++)
         {
@@ -44,5 +45,5 @@ public class Resource : MonoBehaviour
         }
         
 
-    }
+    }*/
 }
