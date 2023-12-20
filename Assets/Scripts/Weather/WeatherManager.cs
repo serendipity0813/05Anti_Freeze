@@ -24,7 +24,7 @@ public class WeatherManager : MonoBehaviour
     
     void Start()
     {
-        changeWeatherImage = new ChageWeatherImage();
+        changeWeatherImage = GetComponent<ChageWeatherImage>();
         StartCoroutine(ChangeWeather());
     }
     
