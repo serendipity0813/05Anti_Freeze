@@ -351,10 +351,14 @@ public class ArchitectUIHandler : MonoBehaviour
             MakeBuilding(BuildingType.Wall);
         else if (buildingLevel[0] == 1)
         {
-            if (buildingLevel[1] == 1 && buildingLevel[2] == 1 && buildingLevel[3] == 1)
+            if (buildingLevel[1] == 1 && buildingLevel[2] == 1 && buildingLevel[3] == 1 && buildingLevel[4] == 1)
                 UpgradeBuilding(BuildingType.Wall);
             else
+            {
                 WallUpgradeFailUI.SetActive(true);
+                BuildingCheck[0] = false;
+            }
+            
         }
 
     }
@@ -384,7 +388,11 @@ public class ArchitectUIHandler : MonoBehaviour
             if (buildingLevel[0] == 2)
                 UpgradeBuilding(BuildingType.Temple);
             else
+            {
                 WallUpgradeFailUI.SetActive(true);
+                BuildingCheck[3] = false;
+            }
+            
         }
        
     }
@@ -399,7 +407,11 @@ public class ArchitectUIHandler : MonoBehaviour
             if (buildingLevel[0] == 2)
                 UpgradeBuilding(BuildingType.Farm);
             else
+            {
+                BuildingCheck[4] = false;
                 WallUpgradeFailUI.SetActive(true);
+            }
+               
         }
     }
 
