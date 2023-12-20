@@ -65,6 +65,7 @@ public class ArchitectManager : MonoBehaviour
 
     public void MakeHouse()
     {
+        Debug.Log("MakeHouse");
         HouseFloor.SetActive(false);
         House1.SetActive(true);
     }
@@ -104,6 +105,12 @@ public class ArchitectManager : MonoBehaviour
     {
         CenterFloor.SetActive(false);
         Center1.SetActive(true);
+    }
+
+    public void MakeTower()
+    {
+        TowerFloor.SetActive(false);
+        Tower1.SetActive(true);
     }
 
     //건물 업그레이드 함수
@@ -160,4 +167,9 @@ public class ArchitectManager : MonoBehaviour
         Center2.SetActive(true);
     }
 
+    public void UpgradeTower()
+    {
+        Tower1.SetActive(false);
+        Tower2.SetActive(true);
+    }
 }
