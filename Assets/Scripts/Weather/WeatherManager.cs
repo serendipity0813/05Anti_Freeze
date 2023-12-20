@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class WeatherManager : MonoBehaviour
 {
-    ChageWeatherImage changeWeatherImage;
+    ChangeWeatherImage changeWeatherImage;
     public Sprite[] icons;
     public float WeatherStatus;
     public float Temperature;
@@ -24,7 +24,7 @@ public class WeatherManager : MonoBehaviour
     
     void Start()
     {
-        changeWeatherImage = GetComponent<ChageWeatherImage>();
+        changeWeatherImage = GetComponent<ChangeWeatherImage>();
         StartCoroutine(ChangeWeather());
     }
     
