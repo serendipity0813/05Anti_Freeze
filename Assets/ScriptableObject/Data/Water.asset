@@ -16,7 +16,7 @@ MonoBehaviour:
   description: It quenches thirst.
   type: 2
   icon: {fileID: 21300000, guid: d36814b9b6903c14aa6c277c56c796b6, type: 3}
-  dropPrefab: {fileID: 0}
+  dropPrefab: {fileID: 1996039204347339763, guid: 41cd5e4c2935a994bb4112658bed1e6a, type: 3}
   canStack: 1
   maxStackAmount: 12
   consumables:
