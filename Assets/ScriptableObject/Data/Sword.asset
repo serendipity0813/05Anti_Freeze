@@ -12,12 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7fdcf762bbd4ff40ab1d5293e304447, type: 3}
   m_Name: Sword
   m_EditorClassIdentifier: 
-  displayName: "\uCE7C"
-  description: "\uACF5\uACA9\uC6A9 \uCE7C\uC785\uB2C8\uB2E4."
+  displayName: Sword
+  description: Attacks the enemy.
   type: 1
-  icon: {fileID: 21300000, guid: c5d8d55905c743b4a9d9741e2ba1ca6d, type: 3}
-  dropPrefab: {fileID: 0}
+  icon: {fileID: 21300000, guid: 4f2f320a217307a48a107491b1d17ebb, type: 3}
+  dropPrefab: {fileID: 730108030587623712, guid: 9994adf821c50b34095abb97fbadab69, type: 3}
   canStack: 0
   maxStackAmount: 0
   consumables: []
-  equipPrefab: {fileID: 0}
+  equipPrefab: {fileID: 1693581936198626166, guid: ab287b83eadba9249b43a0c1eb809cfe, type: 3}
