@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class WeatherManager : MonoBehaviour
 {
-    ChageWeatherImage chageWeatherImage;
+    ChageWeatherImage changeWeatherImage;
     public Sprite[] icons;
     public float WeatherStatus;
     public float Temperature;
@@ -24,19 +24,21 @@ public class WeatherManager : MonoBehaviour
     
     void Start()
     {
+        changeWeatherImage = new ChageWeatherImage();
         StartCoroutine(ChangeWeather());
     }
-    void FixedUpdate()
-    {
-            
-    }
+    
     IEnumerator ChangeWeather()
     {
-        TodayWeather();
-        TodayTemperature();
-        Debug.Log("³¯¾¾°¡ ¹Ù²î¾ú½À´Ï´Ù.");
-        yield return new WaitForSecondsRealtime(1f);
-        ChangeWeather();
+        while(true)
+        {
+            TodayWeather();
+            TodayTemperature();
+            Debug.Log("³¯¾¾°¡ ¹Ù²î¾ú½À´Ï´Ù.");
+            changeWeatherImage.ChangeIcon();
+
+            yield return new WaitForSeconds(5f);
+        }
     }
 
 }
