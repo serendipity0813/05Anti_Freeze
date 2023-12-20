@@ -21,14 +21,15 @@ public class WeatherManager : MonoBehaviour
     }
     void Start()
     {
-        
+        StartCoroutine(ChangeWeather());
     }
 
-    IEnumerable ChangeWeather()
+    IEnumerator ChangeWeather()
     {
-        yield return new WaitForSeconds(500f);
         TodayWeather();
         TodayTemperature();
+        yield return new WaitForSeconds(500f);
+        ChangeWeather();
     }
 
 }
