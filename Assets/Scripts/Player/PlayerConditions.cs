@@ -78,7 +78,23 @@ public class PlayerConditions : MonoBehaviour, IDamagable
         hunger.uiBar.fillAmount = hunger.GetPercentage();
         Thirst.uiBar.fillAmount = Thirst.GetPercentage();
         Temperature.uiBar.fillAmount = Temperature.GetPercentage();
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            if (Cursor.lockState== CursorLockMode.None)
+            {
+                Cursor.lockState = CursorLockMode.Locked;
+            }
+            else
+            {
+                Cursor.lockState = CursorLockMode.None;
+            }
+
+
+        }
     }
+
+    
 
     public void Heal(float amount)
     {

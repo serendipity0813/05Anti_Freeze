@@ -249,6 +249,7 @@ public class ArchitectUIHandler : MonoBehaviour
         }
         
         MakeBuildingUI.SetActive(true);
+        Cursor.lockState = CursorLockMode.None;
     }
 
     private void ShowUpgradeUI(BuildingType type)
@@ -343,6 +344,7 @@ public class ArchitectUIHandler : MonoBehaviour
         else if (BuildingCheck[8])
             MakeArchery();
 
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     private void MakeWall()

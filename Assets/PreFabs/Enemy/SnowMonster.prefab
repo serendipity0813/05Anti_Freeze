@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 783531856593410924}
   - component: {fileID: 5912280677797021807}
   - component: {fileID: 7069750979244733415}
+  - component: {fileID: 5111955560762707483}
   m_Layer: 0
   m_Name: SnowMonster
   m_TagString: Untagged
@@ -113,6 +114,33 @@ CapsuleCollider:
   m_Height: 2.42
   m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!54 &5111955560762707483
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2079927438622010886}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!1001 &669203117882974118
 PrefabInstance:
   m_ObjectHideFlags: 0

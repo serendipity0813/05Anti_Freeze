@@ -37,9 +37,9 @@ public class RespawnResource : MonoBehaviour
     {
         if (_respawnRate - _spawntime < 0 && count < 5)
         {
-            float randomX = Random.Range(-10f, 10f);
+            float randomX = Random.Range(this.transform.position.x-10, this.transform.position.x + 10);
             float randomY = 0f;
-            float randomz = Random.Range(-10f, 10f);
+            float randomz = Random.Range(this.transform.position.z - 10, this.transform.position.z + 10);
             _spawnPos = new Vector3(randomX, randomY, randomz);
 
             int selection = Random.Range(0, ResourcePrefabs.Length);
