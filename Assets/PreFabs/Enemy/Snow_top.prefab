@@ -144,7 +144,7 @@ MonoBehaviour:
   maxWanderDistance: 3
   minWanderWaitTime: 2
   maxWanderWaitTime: 3
-  MonsterDMG: 0
+  MonsterDMG: 1
   attackRate: 1
   attackDistance: 2
   runDistance: 1

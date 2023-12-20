@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -26,7 +27,7 @@ public class Condition
     }
 
     public void Subtract(float amount)
-    {
+    { 
         curValue = Mathf.Max(curValue - amount, 0.0f);
     }
 
@@ -105,11 +106,22 @@ public class PlayerConditions : MonoBehaviour, IDamagable
     public void Die()
     {
         Debug.Log("플레이어가 죽었다.");
+        //
     }
 
     public void TakePhysicalDamage(int damageAmount)
     {
+
         health.Subtract(damageAmount);
         onTakeDamage?.Invoke();
+        Debug.Log("cur"+health.curValue);
+        Debug.Log("dmg"+damageAmount);
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.layer == LayerMask.NameToLayer("Bullet")) 
+        {
+            TakePhysicalDamage(3);
+        }
     }
 }
