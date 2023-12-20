@@ -47,11 +47,12 @@ public class PlayerConditions : MonoBehaviour, IDamagable
     public Condition Temperature;
 
     public float noHungerHealthDecay;
-
+    public GameObject Endingsence;
     public UnityEvent onTakeDamage;
 
     void Start()
     {
+        Time.timeScale = 1.0f;
         health.curValue = health.startValue;
         hunger.curValue = hunger.startValue;
         Thirst.curValue = Thirst.startValue;
@@ -105,6 +106,8 @@ public class PlayerConditions : MonoBehaviour, IDamagable
 
     public void Die()
     {
+        Time.timeScale= 0.0f;
+        Endingsence.SetActive(true);
         Debug.Log("플레이어가 죽었다.");
         //
     }
@@ -114,8 +117,6 @@ public class PlayerConditions : MonoBehaviour, IDamagable
 
         health.Subtract(damageAmount);
         onTakeDamage?.Invoke();
-        Debug.Log("cur"+health.curValue);
-        Debug.Log("dmg"+damageAmount);
     }
     private void OnTriggerEnter(Collider other)
     {
