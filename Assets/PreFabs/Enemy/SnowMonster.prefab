@@ -67,7 +67,7 @@ MonoBehaviour:
   runDistance: 1
   player: {fileID: 0}
   fieldOfView: 120
-  _AttackTime: 30
+  _AttackTime: 150
   ParticleSystem: {fileID: 0}
 --- !u!195 &5912280677797021807
 NavMeshAgent:

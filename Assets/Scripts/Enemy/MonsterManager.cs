@@ -34,11 +34,11 @@ public class MonsterManager : MonoBehaviour
         _spawntime = _spawntime + Time.deltaTime;
 
         spawn();
-        if (_respawntime > 30)
+        /*if (_respawntime > 30)
         {
             destrymonster();
             _respawntime = 0;
-        }
+        }*/
     }
 
     public  void split(GameObject snow)
