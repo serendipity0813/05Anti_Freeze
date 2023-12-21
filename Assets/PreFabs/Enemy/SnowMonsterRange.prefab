@@ -910,10 +910,10 @@ MonoBehaviour:
   IsRange: 1
   Bullet: {fileID: 4786867317314586768, guid: 5c5b7b8d5c7b81045a37ed6acbd29a64, type: 3}
   health: 0
-  walkSpeed: 1
-  runSpeed: 2
+  walkSpeed: 2
+  runSpeed: 4
   dropOnDeath: []
-  detectDistance: 7
+  detectDistance: 8
   safeDistance: 10
   minWanderDistance: 1
   maxWanderDistance: 3
