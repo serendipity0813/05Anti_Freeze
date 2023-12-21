@@ -38,7 +38,7 @@ public class WeatherManager : MonoBehaviour
             yield return new WaitForSeconds(0.01f);
             changeWeatherImage.ChangeIcon();
 
-            yield return new WaitForSeconds(5f);
+            yield return new WaitForSeconds(20f);
         }
     }
 

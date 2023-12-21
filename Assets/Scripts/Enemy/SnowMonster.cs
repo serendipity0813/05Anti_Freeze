@@ -53,7 +53,7 @@ public class SnowMonster : MonoBehaviour ,IDamagable
     public float fieldOfView = 120f;
     private float time;
     private bool _AttackTimeCheck = false;
-    public  float _AttackTime = 40;
+    public  float _AttackTime = 20;
 
     private NavMeshAgent agent;
     private Animator animator;
@@ -88,7 +88,7 @@ public class SnowMonster : MonoBehaviour ,IDamagable
 
         if (time > _AttackTime && !_AttackTimeCheck)
         {
-            detectDistance = 50;
+            detectDistance = 100;
             _AttackTimeCheck = true;
         }
 

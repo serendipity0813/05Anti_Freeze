@@ -126,7 +126,7 @@ Transform:
   - {fileID: 5928637189521597591}
   - {fileID: 2294989960695082336}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2631985502231529462
 MonoBehaviour:
@@ -141,7 +141,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   time: 0
-  fullDayLength: 30
+  fullDayLength: 60
   startTime: 0.4
   noon: {x: 90, y: 0, z: 0}
   sun: {fileID: 7614511943119928293}
