@@ -99,6 +99,7 @@ E : 마우스커서 LOCK,NONE
 ![image](https://github.com/levell1/levell1.github.io/assets/96651722/84e38be9-3e0e-4f4a-8178-1c076f6cc580)  
 
 [피그마](https://www.figma.com/file/JtZ5fogrFyykLoIp1S7SrX/%EB%B3%B81%EB%B6%805%3F?type=whiteboard&node-id=0-1&t=Wpeg8R7ZwgSKCPZ5-0)  
+[영상링크](https://studio.youtube.com/channel/UCEwqe2YAn9VwDvEhyRkcYuQ/videos/upload?filter=%5B%5D&sort=%7B%22columnType%22%3A%22date%22%2C%22sortOrder%22%3A%22DESCENDING%22%7D)  
 <br><br>
 
 
