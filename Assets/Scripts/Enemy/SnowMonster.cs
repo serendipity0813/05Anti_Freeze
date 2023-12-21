@@ -1,9 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-using Unity.VisualScripting;
-using UnityEditor;
-using UnityEditor.Build.Content;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -53,7 +48,7 @@ public class SnowMonster : MonoBehaviour ,IDamagable
     public float fieldOfView = 120f;
     private float time;
     private bool _AttackTimeCheck = false;
-    public  float _AttackTime = 20;
+    public  float _AttackTime = 120f;
 
     private NavMeshAgent agent;
     private Animator animator;
@@ -88,7 +83,7 @@ public class SnowMonster : MonoBehaviour ,IDamagable
 
         if (time > _AttackTime && !_AttackTimeCheck)
         {
-            detectDistance = 100;
+            detectDistance = 150;
             _AttackTimeCheck = true;
         }
 
