@@ -35,6 +35,7 @@ public class WeatherManager : MonoBehaviour
             TodayWeather();
             TodayTemperature();
             Debug.Log("³¯¾¾°¡ ¹Ù²î¾ú½À´Ï´Ù.");
+            yield return new WaitForSeconds(0.01f);
             changeWeatherImage.ChangeIcon();
 
             yield return new WaitForSeconds(5f);
