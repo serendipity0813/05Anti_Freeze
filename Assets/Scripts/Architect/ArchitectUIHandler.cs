@@ -42,7 +42,8 @@ public class ArchitectUIHandler : MonoBehaviour
         get { return buildingCheck; }
         set { buildingCheck = value; }
     }
-        private bool[] buildingCheck;
+
+    private bool[] buildingCheck;
 
 
     private void Start()
@@ -321,6 +322,14 @@ public class ArchitectUIHandler : MonoBehaviour
     //건물 생성 버튼 상호작용 함수
     #region
 
+    public void CancleBtn()
+    {
+        for (int i = 0; i < BuildingCheck.Length; i++)
+        {
+            BuildingCheck[i] = false;
+        }
+    }
+
     public void MakeBtn()
     {    
 
@@ -365,10 +374,7 @@ public class ArchitectUIHandler : MonoBehaviour
 
     private void MakeHouse()
     {
-        if (buildingLevel[1] == 0)
             MakeBuilding(BuildingType.House);
-        else if (buildingLevel[1] == 1)
-            UpgradeBuilding(BuildingType.House);
     }
 
     private void MakeStorage()
@@ -376,7 +382,17 @@ public class ArchitectUIHandler : MonoBehaviour
         if (buildingLevel[2] == 0)
             MakeBuilding(BuildingType.Storage);
         else if (buildingLevel[2] == 1)
-            UpgradeBuilding(BuildingType.Storage);
+        {
+            if (buildingLevel[0] == 2)
+                UpgradeBuilding(BuildingType.Storage);
+            else
+            {
+                BuildingCheck[2] = false;
+                WallUpgradeFailUI.SetActive(true);
+
+            }
+
+        }
     }
 
     private void MakeTemple()
@@ -389,8 +405,9 @@ public class ArchitectUIHandler : MonoBehaviour
                 UpgradeBuilding(BuildingType.Temple);
             else
             {
-                WallUpgradeFailUI.SetActive(true);
                 BuildingCheck[3] = false;
+                WallUpgradeFailUI.SetActive(true);
+
             }
             
         }

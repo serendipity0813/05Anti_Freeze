@@ -474,12 +474,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: ArchitectUIHandler, Assembly-CSharp
-        m_MethodName: ShowTempleUI
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -900,16 +900,16 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: ArchitectUIHandler, Assembly-CSharp
-        m_MethodName: ShowHouseUI
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
-          m_BoolArgument: 1
+          m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &1494394594479719406
 GameObject:
@@ -3108,12 +3108,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: ArchitectUIHandler, Assembly-CSharp
-        m_MethodName: ShowWallUI
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -3991,7 +3991,7 @@ Transform:
   - {fileID: 6853808837757135145}
   - {fileID: 5914149695718123503}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5750255486232144507
 MonoBehaviour:
@@ -4179,7 +4179,7 @@ Transform:
   - {fileID: 7255344503639278951}
   - {fileID: 446332317660522031}
   - {fileID: 1591189178277656659}
-  - {fileID: 7960375613219285788}
+  - {fileID: 7634258931075992817}
   - {fileID: 4012114321014942648}
   - {fileID: 1460112479580078321}
   - {fileID: 8095136788060597690}
@@ -5424,12 +5424,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: ArchitectUIHandler, Assembly-CSharp
-        m_MethodName: ShowStorageUI
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -11013,7 +11013,7 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 982100223738430295}
   m_SourcePrefab: {fileID: 100100000, guid: 1786355ff0ffdd34d9c24e4b64872eb3, type: 3}
---- !u!1 &7960375613219285787 stripped
+--- !u!1 &7113865108774917707 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 1786355ff0ffdd34d9c24e4b64872eb3, type: 3}
   m_PrefabInstance: {fileID: 7960375613219285786}
@@ -11024,7 +11024,7 @@ BoxCollider:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7960375613219285787}
+  m_GameObject: {fileID: 7113865108774917707}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -11039,7 +11039,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.015604493, y: 0.0024669617, z: 0.004459198}
   m_Center: {x: 0.000063445885, y: -0.0000072596654, z: 0.0021637462}
---- !u!4 &7960375613219285788 stripped
+--- !u!4 &7634258931075992817 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 1786355ff0ffdd34d9c24e4b64872eb3, type: 3}
   m_PrefabInstance: {fileID: 7960375613219285786}
