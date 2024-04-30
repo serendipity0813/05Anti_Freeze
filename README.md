@@ -1,5 +1,8 @@
 ## 작성한 코드 목록
 
+<BR><BR>
+<BR><BR>
+
 https://github.com/serendipity0813/05Anti_Freeze/blob/main/Assets/Scripts/Architect/ArchitectManager.cs
 https://github.com/serendipity0813/05Anti_Freeze/blob/main/Assets/Scripts/Architect/ArchitectUIHandler.cs
 https://github.com/serendipity0813/05Anti_Freeze/blob/main/Assets/Scripts/Architect/Center.cs
@@ -7,7 +10,6 @@ https://github.com/serendipity0813/05Anti_Freeze/blob/main/Assets/Scripts/Archit
 https://github.com/serendipity0813/05Anti_Freeze/blob/main/Assets/Scripts/Architect/House.cs
 https://github.com/serendipity0813/05Anti_Freeze/blob/main/Assets/Scripts/Architect/Temple.cs
 
-<BR><BR>
 <BR><BR>
 <BR><BR>
 
